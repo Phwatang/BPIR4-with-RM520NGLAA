@@ -61,7 +61,7 @@ Substeps:
 2. Update opkg and install the following packages:
     - luci-app-modemband
        - Allows easy adjustment for what cellular bands the modem should search for
-    - luci-app-3ginfo
+    - luci-app-3ginfo-lite
        - Give basic information about the current cellular connection
     - luci-app-atcommands
        - Allows for easy sending of AT commands to the modem
