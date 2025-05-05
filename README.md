@@ -23,6 +23,9 @@ Substeps:
     - kmod-usb-net-cdc-mbim 
     - kmod-usb-serial-option
     - umbim
+   
+   Both sets of packages can be installed without interfering with each other. Feel free to install both sets
+   if unsure which mode your modem is currently in.
 2. Install the following packages:
     - modemmanager
     - luci-proto-modemmanager
@@ -128,8 +131,9 @@ Substeps:
 There are many AT commands not specified in the manual.
 
 Some useful hidden commands are given by the AT command: `AT+QNWCFG=?`.
- - The commands `+QNWCFG: "nr5g_pref_freq_list",(0-32),<EARFCN_list>
-` and `+QNWCFG: "lte_pref_freq_list",(0-32),<EARFCN_list>` allow for specifying a band priority hierachy
+ - The commands `AT+QNWCFG: "nr5g_pref_freq_list",(0-32),<EARFCN_list>
+` and `AT+QNWCFG: "lte_pref_freq_list",(0-32),<EARFCN_list>` allow for specifying a band priority hierachy
+    - Upon further testing, these commands appear to do nothing when applied. I.e querying the frequency list before and after modifications gives no change
 
 ## Resources
 Online guides/forums/manuals used:
@@ -161,7 +165,7 @@ Repos/packages:
 ## A Sour Note on RM520N-GLAP
 If step 1 of the guide seems to not work, you may have ended up purchasing a **RM520N-GLAP** instead of the **RM520N-GLAA**.
  - The AP version does not have USB communication support whereas the AA version does
- - Product listing for the modem is frequently abreviated to **RM520N-GL** so double the listing details for the variant
+ - Product listing for the modem is frequently abreviated to **RM520N-GL** so double-check the listing details for the variant
 
 I burnt a few days trying to get the AP version to work with no success. I eventually folded and purchased the AA version.
 
